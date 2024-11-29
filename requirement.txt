@@ -1,0 +1,83 @@
+TODO: 
+
+1. Good documentation , so that anyone who opens the code can understand which part is doing what and how each component is connected. (always update in each iteration). Also mention in documentation how you are generating values and a new data generation file was added. 
+
+    a. file generation, directory structure, file naiming convention etc
+
+2. toggling(disabling/enabling)information, while in snapping mode. But wanted to make the snapping mode like rounding values and snapping which was not achieved in the last sprint. And also keep the moveable version of snapping too. 
+    a. rounding value should be when zoom in/out and snapping 
+
+3. Please check if toggling or changing between functions are okay. 
+
+4. Turn off force when snapping or moving when zooming.
+    a. grid should not zoom, only node  
+
+5. call back mode as a seperate component but it seems to be inside the same force chart, I think this was requested in the previous sprints. 
+    a. add dummy dictionary data
+
+6. some edges not moving nodes if edges overlay , in snapping node.
+
+7. Force should be disabled by default/initial force simulation for initial layout.
+
+8. Fps displays fractional value, but is it really the browser fps please check with some tools(browser extensions) along with the fps generated. 
+     30FPS, 60FPS 
+
+     a. check performance and record 
+
+9. Orthogonal should be possible to enable in snapping node
+
+10. add another mode which can be toggled between static and dynamic. Dynamic visualization: show dynamics as moving dots, line , falstad, mode  ..line dot dot animation .. movement.
+
+11. Orthogonal edges change direction of arrows, when toggling .
+
+12. add orthonal mode over snapping mode and then fixing it . allow snapping mode with other features. 
+13. only motion in arrow animation mode. 
+14. in arrow animation mode , alwas keep on runnning.
+
+15. text box make it removable. 
+
+16. ts file which can create the class and the operations we can operations
+
+17. softmax function, , range from blue to red min to max depending on the value of the edges. 
+    a. node should have color
+    b. edge 
+
+18. X and y coordinates numberings are off can it be made dynamic?.
+19. Callback interface not sure, please verify with a call. 
+    a. module or molecular mode should be in the console 
+
+for color and flux,
+
+Use a random number between 0 and 1 to generate the color spectrum, exclude pure white, or else the user cannot see.
+and flux was the thickness of the lines between nodes, between 0 and 1 depending on the value it will vary the thickness
+
+
+
+
+enum Modes {
+    EXPLORE = “exploration”
+    EDIT = “editing”,
+}
+
+// Object to pass interaction callbacks
+// this allows to dynamically assign callback functions according to the displayed level
+// keys = “mode”, e.g. exploration, editing
+Interface Callbacks {
+    hover: (event: NetworkInteractionEvent) => {} | undefined,
+    click: (event: NetworkInteractionEvent) => {} | undefined,
+    doubleclick: …
+    rightclick: …
+}
+
+// assigns callbacks to modes
+Interface ModeCallbacks {
+    exploration: Callbacks,
+    editing: Callbacks
+
+// assigns callbacks to levels
+Interface LevelCallbacks {
+	community: ModeCallbacks,
+	organelle: ModeCallbacks,
+	module: ModeCallbacks,
+	molecular: ModeCallbacks
+}
