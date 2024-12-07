@@ -39,7 +39,7 @@ To install and run the project locally, follow these steps:
 
 2. Start the development server:
 
-- ng serve pathway-visualization
+- ng serve 
    
 
 3. Open your browser and navigate to `http://localhost:4200/` to view the application.
