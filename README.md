@@ -136,7 +136,7 @@ This component uses an HTML5 canvas along with the D3.js force algorithm to dyna
 ## Functional Flow
 
 1. **File Selection:**
-   - The user starts by selecting a file.
+   - The user starts by selecting a file in the assets folder using the fileupload function in the toolbar(last option in the toolbar). 
 
 2. **File Processing:**
    - Once a file is selected, the `onFileSelected` function is triggered within the `ForceChart` component.
